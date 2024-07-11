@@ -38,4 +38,6 @@ class UserModel extends ChangeNotifier {
   bool checkCredentials(String enteredEmail, String enteredPassword) {
     return (enteredEmail == email && enteredPassword == password);
   }
+  @override
+  notifyListeners();
 }
