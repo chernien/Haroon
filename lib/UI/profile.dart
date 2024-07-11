@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../UserModel.dart';
 import 'footer.dart'; // Assurez-vous que le chemin est correct
 
+//vvv
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
