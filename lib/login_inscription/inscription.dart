@@ -18,11 +18,11 @@ class _InscriptionPageState extends State<Inscription> {
 
   // Liste des nationalités avec drapeaux (à remplir selon vos besoins)
   List<String> nationalites = [
-    'Tunisie 🇹🇳',
+    'Tunisia 🇹🇳',
     'France 🇫🇷',
-    'États-Unis 🇺🇸',
-    'Algérie 🇩🇿',
-    'Maroc 🇲🇦',
+    'United states 🇺🇸',
+    'Algeria 🇩🇿',
+    'Maroco 🇲🇦',
     // Ajoutez d'autres nationalités avec drapeaux au besoin
   ];
 

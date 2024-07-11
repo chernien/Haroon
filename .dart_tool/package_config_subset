@@ -54,6 +54,10 @@ flutter_plugin_android_lifecycle
 3.4
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.20/
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.20/lib/
+fluttertoast
+2.12
+file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/fluttertoast-8.2.6/
+file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/fluttertoast-8.2.6/lib/
 http
 3.3
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.2.1/
@@ -68,8 +72,8 @@ file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.1.2
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.1.2/lib/
 image_picker_android
 3.4
-file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.12+3/
-file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.12+3/lib/
+file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.12+4/
+file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.12+4/lib/
 image_picker_for_web
 3.3
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_for_web-3.0.4/
@@ -126,6 +130,10 @@ mime
 3.2
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/mime-1.0.5/
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/mime-1.0.5/lib/
+nested
+2.12
+file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0/
+file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0/lib/
 path
 3.0
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.9.0/
@@ -158,6 +166,10 @@ plugin_platform_interface
 3.0
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.8/
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.8/lib/
+provider
+2.12
+file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.2/
+file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.2/lib/
 source_span
 2.18
 file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0/

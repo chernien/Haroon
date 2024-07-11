@@ -46,20 +46,20 @@
 32    </queries>
 33
 34    <permission
-34-->[androidx.core:core:1.10.1] C:\Users\chern\.gradle\caches\transforms-3\a3842a17fe7307c5bcdac869078c73a0\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+34-->[androidx.core:core:1.13.1] C:\Users\chern\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
 35        android:name="com.example.harounapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-35-->[androidx.core:core:1.10.1] C:\Users\chern\.gradle\caches\transforms-3\a3842a17fe7307c5bcdac869078c73a0\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+35-->[androidx.core:core:1.13.1] C:\Users\chern\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
 36        android:protectionLevel="signature" />
-36-->[androidx.core:core:1.10.1] C:\Users\chern\.gradle\caches\transforms-3\a3842a17fe7307c5bcdac869078c73a0\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+36-->[androidx.core:core:1.13.1] C:\Users\chern\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
 37
 38    <uses-permission android:name="com.example.harounapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-38-->[androidx.core:core:1.10.1] C:\Users\chern\.gradle\caches\transforms-3\a3842a17fe7307c5bcdac869078c73a0\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
-38-->[androidx.core:core:1.10.1] C:\Users\chern\.gradle\caches\transforms-3\a3842a17fe7307c5bcdac869078c73a0\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+38-->[androidx.core:core:1.13.1] C:\Users\chern\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+38-->[androidx.core:core:1.13.1] C:\Users\chern\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
 39
 40    <application
 41        android:name="android.app.Application"
 42        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-42-->[androidx.core:core:1.10.1] C:\Users\chern\.gradle\caches\transforms-3\a3842a17fe7307c5bcdac869078c73a0\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+42-->[androidx.core:core:1.13.1] C:\Users\chern\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 43        android:debuggable="true"
 44        android:icon="@mipmap/ic_launcher"
 45        android:label="harounapp" >

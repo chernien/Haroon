@@ -1,313 +1,195 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:harounapp/UI/footer.dart'; // Assurez-vous de corriger le chemin vers votre fichier footer.dart
+import 'package:provider/provider.dart';
+import '../UserModel.dart';
+import 'footer.dart'; // Assurez-vous que le chemin est correct
 
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            'username',
-            style: TextStyle(
-              fontSize: 23.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              letterSpacing: 2.0,
-            ),
-          ),
+    UserModel userModel = Provider.of<UserModel>(context, listen: false);
+
+    // Fonction pour afficher le dialogue
+    void showBonjourDialog() {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          Future.delayed(Duration(seconds: 2), () {
+            Navigator.of(context).pop(true);
+          });
+          return AlertDialog(
+            content: Text('Bonjour '+userModel.nom),
+          );
+        },
+      );
+    }
+
+    // Appel du dialogue au montage du widget
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showBonjourDialog();
+    });
+
+    return Consumer<UserModel>(
+      builder: (context, userModel, _) => Scaffold(
+        appBar: AppBar(
+          title: Text('Profile'),
         ),
-        actions: [
-          PopupMenuButton<String>(
-            icon: Icon(Icons.menu),
-            onSelected: (String result) {
-              print(result); // Afficher simplement l'option sélectionnée // console
-            },
-            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-              const PopupMenuItem<String>(
-                value: 'Payer une formation',
-                child: Text('Payer une formation'),
-              ),
-              const PopupMenuItem<String>(
-                value: 'Paramètres et confidentialité',
-                child: Text('Paramètres et confidentialité'),
-              ),
-            ],
-          ),
-        ],
-
-      ),
-      body: ProfilePage(),
-      bottomNavigationBar: AppFooter(
-        onHomePressed: () {
-          // Action pour aller à l'accueil
-          print('Go to Home');
-        },
-        onDiscoverPressed: () {
-          // Action pour découvrir
-          print('Discover');
-        },
-        onMediaImportPressed: () {
-          // Action pour importer un média
-          print('Import Media');
-        },
-        onInboxPressed: () {
-          // Action pour la boîte de réception
-          print('Inbox');
-        },
-        onProfilePressed: () {
-          // Action pour aller au profil
-          print('Go to Profile');
-        },
-      ),
-    );
-  }
-}
-
-class ProfilePage extends StatefulWidget {
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
-  String _bio = ''; // Variable pour stocker la bio
-  late ImagePicker _picker; // Déclaration de l'instance ImagePicker
-
-  @override
-  void initState() {
-    super.initState();
-    _picker = ImagePicker(); // Initialisation de l'instance ImagePicker
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          // Section de la photo de profil
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Stack(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              // Section de la photo de profil
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
                   children: [
-                    CircleAvatar(
-                      radius: 50.0,
-                      backgroundImage: AssetImage('assets/pexels-photo-771742.jpeg'), // image par défaut
+                    Stack(
+                      children: [
+                        CircleAvatar(
+                          radius: 50.0,
+                          backgroundImage: AssetImage('assets/pexels-photo-771742.jpeg'), // Utilisez userModel.userImage ici
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: IconButton(
+                            icon: Icon(Icons.camera_alt),
+                            onPressed: () {
+                              // Gérer l'importation de nouvelle photo
+                              print('Changer photo de profil');
+                              userModel.pickImage(); // Appel à une méthode de modèle pour choisir une image
+                            },
+                          ),
+                        ),
+                      ],
                     ),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: IconButton(
-                        icon: Icon(Icons.camera_alt),
-                        onPressed: () {
-                          // Gérer l'importation de nouvelle photo
-                          print('Changer photo de profil');
-                          _pickImage(); // Appeler la méthode pour choisir une image
-                        },
+                    SizedBox(height: 10.0),
+                    Text(
+                      userModel.nom,
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
                       ),
+                    ),
+                    SizedBox(height: 10.0), // Ajout d'un espace entre le nom et le Row
+                    // Row sous le nom de l'utilisateur
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              '123', // Remplacez par le nombre de j'aimes réel
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text('J\'aimes'),
+                          ],
+                        ),
+                        SizedBox(width: 20.0),
+                        Column(
+                          children: [
+                            Text(
+                              '456', // Remplacez par le nombre de followers réel
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text('Followers'),
+                          ],
+                        ),
+                        SizedBox(width: 20.0),
+                        Column(
+                          children: [
+                            Text(
+                              '789', // Remplacez par le nombre de suivis réel
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text('Suivis'),
+                          ],
+                        ),
+                      ],
                     ),
                   ],
                 ),
-                SizedBox(height: 10.0),
-                Text(
-                  'username',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
+              ),
+              // Autres sections à mettre à jour avec userModel
+              SizedBox(height: 20.0),
+              // Section des actions
+              // Ajoutez ici d'autres widgets pour les actions spécifiques à l'utilisateur
+              SizedBox(height: 10.0),
+              // Section de la bio
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: TextButton(
+                    onPressed: () {
+                      userModel.editBio(context); // Utilisation d'une méthode pour éditer la bio dans le modèle
+                    },
+                    child: Text('Ajouter une bio'),
                   ),
                 ),
-              ],
-            ),
-          ),
-          // Section des statistiques
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      '0',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text('Suivis'),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text(
-                      '0',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text('Followers'),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text(
-                      '0',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text('J\'aime'),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20.0),
-          // Section des actions
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                OutlinedButton(
-                  onPressed: () {
-                    // Gérer la modification du profil
-                    print('Modifier le profil');
-                  },
-                  child: Text('Modifier le profil'),
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    // Gérer l'accès à la formation
-                    print('Formation');
-                  },
-                  child: Text('Formation'),
-                ),
-                IconButton(
-                  icon: Icon(Icons.person_add),
-                  onPressed: () {
-                    // Gérer l'ajout d'amis
-                    print('Ajouter des amis');
-                  },
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 10.0),
-          // Section de la bio
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Align(
-              alignment: Alignment.center,
-              child: TextButton(
-                onPressed: () {
-                  _editBio(context); // Fonction pour éditer la bio
+              ),
+              SizedBox(height: 10.0),
+              // Affichage de la bio avec FutureBuilder
+              FutureBuilder<String>(
+                future: userModel.getBio(), // Appel à une méthode future du modèle pour obtenir la bio
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator(); // Affichage pendant le chargement
+                  } else {
+                    if (snapshot.hasData && snapshot.data != null) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Text(
+                          snapshot.data!,
+                          style: TextStyle(
+                            fontSize: 16.0,
+                          ),
+                        ),
+                      );
+                    } else {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Text(
+                          'Aucune bio ajoutée pour le moment',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                          ),
+                        ),
+                      );
+                    }
+                  }
                 },
-                child: Text('Ajouter une bio'),
               ),
-            ),
+              // Autres sections à mettre à jour avec FutureBuilder
+              // Ajoutez ici d'autres widgets basés sur d'autres futures ou données de userModel
+            ],
           ),
-          SizedBox(height: 10.0),
-          // Affichage de la bio
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              _bio.isNotEmpty ? _bio : 'Aucune bio ajoutée pour le moment',
-              style: TextStyle(
-                fontSize: 16.0,
-              ),
-            ),
-          ),
-          SizedBox(height: 10.0),
-          // Conteneur pour l'importation de contenu multimédia
-          Container(
-            padding: EdgeInsets.all(16.0),
-            color: Colors.grey[200],
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Importer un contenu multimédia'),
-                IconButton(
-                  icon: Icon(Icons.photo_camera),
-                  onPressed: () {
-                    // Gérer l'importation d'une image depuis la galerie
-                    _pickImage();
-                  },
-                ),
-              ],
-            ),
-          ),
-        ],
+        ),
+        bottomNavigationBar: AppFooter(
+          onHomePressed: () {
+            // Code pour Home
+          },
+          onDiscoverPressed: () {
+            // Code pour Discover
+          },
+          onMediaImportPressed: () {
+            // Code pour Media Import
+          },
+          onInboxPressed: () {
+            // Code pour Inbox
+          },
+          onProfilePressed: () {
+            // Code pour Profile
+          },
+        ),
       ),
     );
-  }
-
-  // Fonction pour choisir une image depuis la galerie
-  void _pickImage() async {
-    if (await Permission.photos.request().isGranted ||
-        await Permission.mediaLibrary.request().isGranted) {
-      // Permission granted, open gallery
-      final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery, imageQuality: 80);
-      if (pickedFile != null) {
-        // Handle image selection here
-        print('Image selected: ${pickedFile.path}');
-        setState(() {
-          // Update UI with selected image
-        });
-      }
-    } else {
-      // Permission denied
-      print('Permission non accordée pour accéder aux photos');
-    }
-  }
-
-  // Fonction pour éditer la bio
-  void _editBio(BuildContext context) async {
-    String bio = _bio; // Initialisez avec la bio existante
-
-    // Affichez un dialogue pour éditer la bio
-    String newBio = await showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        TextEditingController _bioController = TextEditingController(text: bio);
-
-        return AlertDialog(
-          title: Text('Éditer la bio'),
-          content: TextField(
-            controller: _bioController,
-            maxLines: 3, // Nombre de lignes pour le champ de texte
-            decoration: InputDecoration(
-              hintText: 'Entrez votre bio ici',
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(_bioController.text);
-              },
-              child: Text('Enregistrer'),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(); // Fermer le dialogue sans sauvegarder
-              },
-              child: Text('Annuler'),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (newBio != null) {
-      setState(() {
-        _bio = newBio; // Mettre à jour la bio dans l'état local du widget
-      });
-      print('Nouvelle bio: $_bio');
-    }
   }
 }

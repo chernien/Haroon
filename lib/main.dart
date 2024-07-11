@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:harounapp/login_inscription/inscription.dart';
 import 'package:harounapp/login_inscription/login_page.dart';
+import 'package:harounapp/login_inscription/inscription.dart';
 import 'package:harounapp/UI/profile.dart';
+import 'package:provider/provider.dart';
+
+import 'UserModel.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Haroun App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => UserModel(),
+      child: MaterialApp(
+        title: 'Haroun app',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: '/', // Définissez la route initiale ici
+        routes: {
+          '/': (context) => Login(), // Route pour l'écran de connexion
+          '/profile': (context) => Profile(), // Route pour l'écran de profil
+          // Ajoutez d'autres routes au besoin
+        },
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => Profile(), // Exemple : Page de connexion comme page d'accueil
-        '/inscription': (context) => Inscription(),
-        '/profile': (context) => Profile(),
-      },
-    );
-  }
+    ),
+  );
 }
