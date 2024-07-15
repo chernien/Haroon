@@ -170,6 +170,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "jwt_decoder",
       "rootUri": "file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/jwt_decoder-2.0.1",
       "packageUri": "lib/",
@@ -356,7 +362,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-07-12T12:36:11.774891Z",
+  "generated": "2024-07-15T13:30:48.834870Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///C:/flutter",
