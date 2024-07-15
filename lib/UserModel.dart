@@ -1,43 +1,44 @@
-import 'dart:async';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'Services/UserService.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
 
 class UserModel extends ChangeNotifier {
-  String email = 'test@example.com';
-  String password = 'password123';
-  String _nom = 'cherni'; // Exemple de nom d'utilisateur par défaut
-  String get nom => _nom;
+  String _email = '';
+  String get email => _email;
 
-  String _bio = ''; // Exemple de bio par défaut
-  String get bio => _bio;
+  String _token = '';
+  String get token => _token;
 
-  File? _userImage; // Image de profil de type File
-  File? get userImage => _userImage;
+  final UserService _userService = UserService();
 
-  // Méthode pour choisir une image depuis la galerie
-  Future<void> pickImage() async {
-    // Implémentation de l'ImagePicker
-    // Vous devrez probablement ajuster cette méthode selon vos besoins exacts
-    // Assurez-vous d'importer les packages nécessaires comme image_picker et permission_handler
+  Future<bool> login(String email, String password) async {
+    try {
+      final response = await _userService.login(email, password);
+      print('Response from login API: $response'); // Vérifiez la réponse JSON ici
+
+      // Vérifiez si 'token' existe dans la réponse JSON
+      if (response.containsKey('token') && response['token'] != null) {
+        _token = response['token'];
+
+        // Décoder le token pour obtenir les informations utilisateur
+        Map<String, dynamic> decodedToken = JwtDecoder.decode(_token);
+        print('Decoded Token: $decodedToken'); // Affichez le contenu décodé du token
+
+        if (decodedToken.containsKey('firstName')) {
+          _email = decodedToken['firstName'];
+        } else {
+          print('Field "email" not found in token');
+        }
+
+        notifyListeners();
+        return true;
+      } else {
+        print('Field "token" not found or null in API response');
+        return false;
+      }
+    } catch (e) {
+      print('Error logging in: $e'); // Capturez et examinez les erreurs ici
+      return false;
+    }
   }
-
-  // Méthode pour éditer la bio
-  Future<void> editBio(BuildContext context) async {
-    // Implémentation pour éditer la bio via un dialogue
-    // Vous devrez probablement ajuster cette méthode selon vos besoins exacts
-  }
-
-  // Méthode future pour obtenir la bio (simulée ici avec un délai)
-  Future<String> getBio() async {
-    await Future.delayed(Duration(seconds: 1)); // Simuler un chargement asynchrone
-    return _bio; // Retourne la bio actuelle
-  }
-
-  // Méthode pour vérifier les identifiants de connexion
-  bool checkCredentials(String enteredEmail, String enteredPassword) {
-    return (enteredEmail == email && enteredPassword == password);
-  }
-  @override
-  notifyListeners();
 }

@@ -170,6 +170,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "jwt_decoder",
+      "rootUri": "file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/jwt_decoder-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "leak_tracker",
       "rootUri": "file:///C:/Users/chern/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.4",
       "packageUri": "lib/",
@@ -350,7 +356,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-07-11T11:11:46.833104Z",
+  "generated": "2024-07-12T12:36:11.774891Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///C:/flutter",

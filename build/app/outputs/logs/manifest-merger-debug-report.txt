@@ -25,6 +25,7 @@ INJECTED from C:\Users\chern\StudioProjects\harounapp\android\app\src\main\Andro
 MERGED from C:\Users\chern\StudioProjects\harounapp\android\app\src\main\AndroidManifest.xml:1:1-50:12
 MERGED from [:image_picker_android] C:\Users\chern\StudioProjects\harounapp\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-36:12
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\chern\StudioProjects\harounapp\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:fluttertoast] C:\Users\chern\StudioProjects\harounapp\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:permission_handler_android] C:\Users\chern\StudioProjects\harounapp\build\permission_handler_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\chern\.gradle\caches\transforms-3\2c78d49fbcc625202f50a9334fbc9153\transformed\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.7.2] C:\Users\chern\.gradle\caches\transforms-3\bde7e7dd978a4f14628e733b41fcdd9f\transformed\jetified-activity-1.7.2\AndroidManifest.xml:17:1-22:12
@@ -98,6 +99,8 @@ MERGED from [:image_picker_android] C:\Users\chern\StudioProjects\harounapp\buil
 MERGED from [:image_picker_android] C:\Users\chern\StudioProjects\harounapp\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-8:41
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\chern\StudioProjects\harounapp\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\chern\StudioProjects\harounapp\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] C:\Users\chern\StudioProjects\harounapp\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] C:\Users\chern\StudioProjects\harounapp\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:permission_handler_android] C:\Users\chern\StudioProjects\harounapp\build\permission_handler_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:permission_handler_android] C:\Users\chern\StudioProjects\harounapp\build\permission_handler_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\chern\.gradle\caches\transforms-3\2c78d49fbcc625202f50a9334fbc9153\transformed\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
