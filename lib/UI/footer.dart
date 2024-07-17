@@ -41,7 +41,7 @@ class AppFooter extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.person),
             onPressed:() {
-              Navigator.pushNamed(context, '/profile');
+
             }
 
           ),

@@ -22,5 +22,6 @@ com.example.harounapp-mergeDebugResources-20 C:\Users\chern\StudioProjects\harou
 com.example.harounapp-mergeDebugResources-21 C:\Users\chern\StudioProjects\harounapp\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
 com.example.harounapp-merged_res-22 C:\Users\chern\StudioProjects\harounapp\build\app\intermediates\merged_res\debug
 com.example.harounapp-packaged_res-23 C:\Users\chern\StudioProjects\harounapp\build\flutter_plugin_android_lifecycle\intermediates\packaged_res\debug
-com.example.harounapp-packaged_res-24 C:\Users\chern\StudioProjects\harounapp\build\image_picker_android\intermediates\packaged_res\debug
-com.example.harounapp-packaged_res-25 C:\Users\chern\StudioProjects\harounapp\build\permission_handler_android\intermediates\packaged_res\debug
+com.example.harounapp-packaged_res-24 C:\Users\chern\StudioProjects\harounapp\build\fluttertoast\intermediates\packaged_res\debug
+com.example.harounapp-packaged_res-25 C:\Users\chern\StudioProjects\harounapp\build\image_picker_android\intermediates\packaged_res\debug
+com.example.harounapp-packaged_res-26 C:\Users\chern\StudioProjects\harounapp\build\permission_handler_android\intermediates\packaged_res\debug

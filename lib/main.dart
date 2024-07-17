@@ -5,6 +5,8 @@ import 'package:harounapp/UI/profile.dart';
 import 'package:provider/provider.dart';
 
 import 'UserModel.dart';
+import 'login_inscription/signup.dart';
+
 
 void main() {
   runApp(
@@ -17,8 +19,10 @@ void main() {
         ),
         initialRoute: '/', // Définissez la route initiale ici
         routes: {
-          '/': (context) => Login(), // Route pour l'écran de connexion
+          '/': (context) => Signup(), // Route pour l'écran de connexion
+          '/login' : (context) => Login(),
           '/profile': (context) => Profile(), // Route pour l'écran de profil
+          '/Inscription' : (context) => Inscription() ,
           // Ajoutez d'autres routes au besoin
         },
       ),
