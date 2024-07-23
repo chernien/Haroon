@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:harounapp/Inscription.dart';
 import 'package:harounapp/login_inscription/login_page.dart';
 import 'package:harounapp/login_inscription/inscription.dart';
 import 'package:harounapp/UI/profile.dart';
 import 'package:provider/provider.dart';
 
 import 'UserModel.dart';
+import 'login_inscription/MultiStepSignUp.dart';
 import 'login_inscription/signup.dart';
-
 
 void main() {
   runApp(
@@ -17,13 +18,14 @@ void main() {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: '/', // Définissez la route initiale ici
+        initialRoute: '/', // Define the initial route here
         routes: {
-          '/': (context) => Signup(), // Route pour l'écran de connexion
-          '/login' : (context) => Login(),
-          '/profile': (context) => Profile(), // Route pour l'écran de profil
-          '/Inscription' : (context) => Inscription() ,
-          // Ajoutez d'autres routes au besoin
+          '/': (context) => Inscri(), // Route for the signup screen
+          '/login': (context) => Login(),
+          '/profile': (context) => Profile(), // Route for the profile screen
+          '/Inscription': (context) => Inscription(),
+          '/multi-step-signup': (context) => MultiStepSignUp(), // Add the multi-step sign-up route
+          // Add other routes as needed
         },
       ),
     ),
